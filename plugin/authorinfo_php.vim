@@ -1,19 +1,3 @@
-"=============================================================================
-"     FileName: authorinfo.vim
-"         Desc: 
-"       Author: dantezhu
-"        Email: zny2008@gmail.com
-"     HomePage: http://www.vimer.cn
-"      Created: 2012-10-18 10:59:43
-"      Version: 1.7
-"   LastChange: 2012-10-19 13:05:36
-"      History: 
-"               1.0 | dantezhu | support bash's #!xxx
-"               1.1 | dantezhu | fix bug for NerdComment's <leader>
-"               1.6 | dantezhu | add created
-"               1.7 | dantezhu | add history init
-"=============================================================================
-
 if exists('g:loaded_authorinfo')
     finish
 endif
@@ -130,9 +114,10 @@ function s:AddTitle()
     normal o
     normal o
     "call setline('.',preChar.noTypeChar.preChar.' ')
+    let gotoLn = line('.')  " 指示光标最后停留的位置
     "normal o
     "normal o
-    call setline('.',preChar.noTypeChar.preChar.g:snips_php_version)
+    call setline('.',preChar.noTypeChar.preChar.'@version    '.g:vimrc_version)
     normal o
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@category   ')
@@ -147,9 +132,9 @@ function s:AddTitle()
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@license    '.g:vimrc_license)
     "normal o
-    "call setline('.',preChar.noTypeChar.preChar.'@email:      '.g:vimrc_email)
+    "call setline('.',preChar.noTypeChar.preChar.'@email:     '.g:vimrc_email)
     "normal o
-    "call setline('.',preChar.noTypeChar.preChar.'@link:       '.g:vimrc_link)
+    "call setline('.',preChar.noTypeChar.preChar.'@link:      '.g:vimrc_link)
     normal o
     "call setline('.',preChar.noTypeChar.preChar.'@version '.g:vimrc_version)
     "normal o
@@ -163,7 +148,6 @@ function s:AddTitle()
     normal o
     call setline('.',noTypeChar.startTag)
     let lastLine = line('.')
-    let gotoLn = line('.')  " 指示光标最后停留的位置
 
     "在最后一行之后做的事情
     call s:AfterTitle()
