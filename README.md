@@ -33,7 +33,6 @@ e.g.: vim test.php, vim test.py, vim test.sh etc.
 ```
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java,*.py,*.php exec ":call SetTitle()" 
 func SetTitle()
-    "                                          " 如果文件类型为.sh文件 
     if &filetype == 'sh'
         call setline(1,"\#!/bin/bash")
         call append(line("."), "")
