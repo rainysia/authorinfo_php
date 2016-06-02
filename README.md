@@ -15,8 +15,9 @@ let g:vimrc_author='Rainy Sia'
 let g:vimrc_email='rainysia#btroot.org'
 let g:vimrc_link='http://www.btroot.org'
 let g:vimrc_copyright='2013-2016 BTROOT.ORG' 
-let g:vimrc_license='http://www.btroot.org/user_guide/license.html V1'
-let g:vimrc_version='0.0.1'
+let g:vimrc_license='http://php.net/license/3_01.txt PHP License 3.01'
+let g:vimrc_version='GIT: 0.0.1'
+let g:vimrc_php_version='PHP version 5.6'
 nmap <F4> :AuthorInfoDetect<cr>
 ```
 ![Author for PHP passed Syntastic](https://cloud.githubusercontent.com/assets/1259324/14662145/fbca72d4-06e5-11e6-9ded-230bbe6ea4c8.png)

@@ -110,41 +110,35 @@ function s:AddTitle()
     let firstLine = line('.')
     call setline('.',startTag.noTypeChar)
     normal o
-    call setline('.',preChar.noTypeChar.preChar. expand("%:t"))
+    call setline('.',preChar.noTypeChar.preChar.'Short description for file')
     normal o
     normal o
-    "call setline('.',preChar.noTypeChar.preChar.' ')
+    "call setline('.',preChar.noTypeChar.preChar. expand("%:t"))
+    call setline('.',preChar.noTypeChar.preChar.g:vimrc_php_version)
     let gotoLn = line('.')  " 指示光标最后停留的位置
+    normal o
+    normal o
+    call setline('.',preChar.noTypeChar.preChar.'@category   '.'CategoryName')
+    normal o
+    call setline('.',preChar.noTypeChar.preChar.'@package    '.'PackageName')
     "normal o
-    "normal o
-    call setline('.',preChar.noTypeChar.preChar.'@version    '.g:vimrc_version)
-    normal o
-    normal o
-    call setline('.',preChar.noTypeChar.preChar.'@category   ')
-    normal o
-    call setline('.',preChar.noTypeChar.preChar.'@package    ')
-    normal o
-    call setline('.',preChar.noTypeChar.preChar.'@subpackage ')
+    "call setline('.',preChar.noTypeChar.preChar.'@subpackage ')
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@author     '.g:vimrc_author.preChar.'<'.g:vimrc_email.'>')
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@copyright  '.g:vimrc_copyright)
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@license    '.g:vimrc_license)
-    "normal o
+    normal o
+    call setline('.',preChar.noTypeChar.preChar.'@version    '.g:vimrc_version)
     "call setline('.',preChar.noTypeChar.preChar.'@email:     '.g:vimrc_email)
-    "normal o
-    "call setline('.',preChar.noTypeChar.preChar.'@link:      '.g:vimrc_link)
     normal o
-    "call setline('.',preChar.noTypeChar.preChar.'@version '.g:vimrc_version)
-    "normal o
-    call setline('.',preChar.noTypeChar.preChar.'@createTime '.strftime("%Y-%m-%d %H:%M:%S"))
+    call setline('.',preChar.noTypeChar.preChar.'@CreateTime '.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
-    call setline('.',preChar.noTypeChar.preChar.'@lastChange '.strftime("%Y-%m-%d %H:%M:%S"))
+    call setline('.',preChar.noTypeChar.preChar.'@LastChange '.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
     normal o
-    call setline('.',preChar.noTypeChar.preChar.'@link       '.g:vimrc_link)
-    normal o
+    call setline('.',preChar.noTypeChar.preChar.'@link '.g:vimrc_link)
     normal o
     call setline('.',noTypeChar.startTag)
     let lastLine = line('.')
