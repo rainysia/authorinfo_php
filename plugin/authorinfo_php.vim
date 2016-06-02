@@ -115,6 +115,8 @@ function s:AddTitle()
     let gotoLn = line('.')
     normal o
     normal o
+    call setline('.',preChar.noTypeChar.preChar.'@filename   '.expand("%:t"))
+    normal o
     call setline('.',preChar.noTypeChar.preChar.'@category   '.'CategoryName')
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@package    '.'PackageName')
@@ -127,9 +129,9 @@ function s:AddTitle()
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@version    '.g:vimrc_version)
     normal o
-    call setline('.',preChar.noTypeChar.preChar.'@CreateTime '.strftime("%Y-%m-%d %H:%M:%S"))
+    call setline('.',preChar.noTypeChar.preChar.'@createTime '.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
-    call setline('.',preChar.noTypeChar.preChar.'@LastChange '.strftime("%Y-%m-%d %H:%M:%S"))
+    call setline('.',preChar.noTypeChar.preChar.'@lastChange '.strftime("%Y-%m-%d %H:%M:%S"))
     normal o
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@link '.g:vimrc_link)
@@ -157,13 +159,13 @@ function s:TitleDet()
     let n = 1
     while n < 30
         let line = getline(n)
-        if line =~ '^.*filename:\S*.*$'
-            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'.expand("%:t"),'g')
+        if line =~ '^.*filename\S*.*$'
+            let newline=substitute(line,'filename\(\s*\)\(\S.*$\)$','filename\1'.expand("%:t"),'g')
             call setline(n,newline)
             let updated = 1
         endif
-        if line =~ '^.*lastChange:\S*.*$'
-            let newline=substitute(line,':\(\s*\)\(\S.*$\)$',':\1'.strftime("%Y-%m-%d %H:%M:%S"),'g')
+        if line =~ '^.*lastChange\S*.*$'
+            let newline=substitute(line,'lastChange\(\s*\)\(\S.*$\)$','lastChange\1'.strftime("%Y-%m-%d %H:%M:%S"),'g')
             call setline(n,newline)
             let updated = 1
         endif
