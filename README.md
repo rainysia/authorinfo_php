@@ -1,5 +1,4 @@
-authorinfo_php
-================
+authorinfo_php ================
 
 It's a vim authorinfo for php base on [dantezhu/authorinfo](https://github.com/dantezhu/authorinfo)
 I modified some function and details for php PSR code standard.
@@ -25,7 +24,7 @@ Others
 ------------------------------
 You may want to add bash,python,c,java header automatically when vim create, add the below snippets into your vimrc.
 ```
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java,*.py exec ":call SetTitle()" 
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java,*.py,*.php exec ":call SetTitle()" 
 func SetTitle()
     "                                          " 如果文件类型为.sh文件 
     if &filetype == 'sh'
@@ -35,6 +34,9 @@ func SetTitle()
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# -*- coding: UTF-8 -*-")
         call append(line(".")+1, "")
+    elseif &filetype == 'php'
+        call setline(1,"<?php")
+        call append(line("."), "")
     else 
         call setline(1, "/*************************************************************************")
         call append(line("."), "	> File Name: ".expand("%"))
@@ -53,7 +55,6 @@ func SetTitle()
         call append(line(".")+6, "#include <stdio.h>")
         call append(line(".")+7, "")
     endif
-
     if &filetype == 'java'
     	call append(line(".")+6,"public class ".expand("%"))
     	call append(line(".")+7,"")
