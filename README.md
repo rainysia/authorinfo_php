@@ -91,6 +91,4 @@ autocmd BufNewFile * normal G
 ----------------------------------------
 2016-04-20 10:11:49 Add Readme<br />
 2016-06-02 17:20:43 Update Authorinfo for PHP</br >
-
-
-
+2016-07-12 18:18:05 Update variables for global</br >

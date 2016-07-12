@@ -1,7 +1,14 @@
 if exists('g:loaded_authorinfo')
     finish
 endif
-let g:loaded_authorinfo= 1
+let g:loaded_authorinfo  = 1
+let g:vimrc_lang_version = exists('g:vimrc_lang_version') ? g:vimrc_lang_version : ' version num'
+let g:vimrc_author       = exists('g:vimrc_author')     ? g:vimrc_author : ' Author'
+let g:vimrc_email        = exists('g:vimrc_email')      ? g:vimrc_email : ' author@xxx.com'
+let g:vimrc_copyright    = exists('g:vimrc_copyright')  ? g:vimrc_copyright : ' Copyright'
+let g:vimrc_license      = exists('g:vimrc_license')    ? g:vimrc_license : 'https://opensource.org/licenses/MIT license'
+let g:vimrc_version      = exists('g:vimrc_version')    ? g:vimrc_version : 'GIT: 0.0.1'
+let g:vimrc_link         = exists('g:vimrc_link')       ? g:vimrc_link : 'http://xxx.com'
 
 if exists("mapleader")
     let s:t_mapleader = mapleader
