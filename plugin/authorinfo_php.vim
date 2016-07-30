@@ -111,6 +111,10 @@ function s:AddTitle()
     let upperFiletype=toupper(&filetype)
     if upperFiletype ==# 'SH'
         let upperFiletype = 'BASH'
+    elseif upperFiletype ==# 'PHP'
+        let upperFiletype = 'PHP'
+    elseif upperFiletype ==# 'PYTHON'
+        let upperFiletype = 'PYTHON'
     endif
 
     call setline('.',noTypeChar)
