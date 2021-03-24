@@ -147,7 +147,7 @@ function s:AddTitle()
     normal o
     call setline('.',preChar.noTypeChar.preChar.'@link '.g:vimrc_link)
     normal o
-    call setline('.',noTypeChar)
+    call setline('.',preChar.noTypeChar)
 
     let lastLine = line('.')
 
